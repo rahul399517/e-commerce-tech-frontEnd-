@@ -76,7 +76,7 @@ function FeaturedSlideCard(props) {
               display: "inline",
             }}
           >
-            $ 50/-
+            $ {props.productData.Cost}/-
           </p>
         </Card.Title>
       </Card>
