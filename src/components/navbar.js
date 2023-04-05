@@ -28,7 +28,11 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
+
 function TopHeader() {
+  // declaring the use state
+  const navigate = useNavigate();
+  //declaring the useSelector
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const getCartCount = () => {
@@ -43,7 +47,7 @@ function TopHeader() {
   const user = useSelector((state) => state.user);
   //dispatcher
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
   //Logout fuctionality
   const logout = () => {
     localStorage.removeItem("token");
@@ -70,6 +74,34 @@ function TopHeader() {
   const ToSearch = () => {
     navigate("/searchpage");
   };
+  //go to Home API
+  const Tohome = () => {
+    navigate("/home");
+  };
+  //go to all product API
+  const Toallproduct = () => {
+    navigate("/allproduct");
+  };
+  //go to Laptop APi
+  const Tolaptop = () => {
+    navigate("/laptop");
+  };
+  //go to Watches API
+  const Towatch = () => {
+    navigate("/watches");
+  };
+  //go to tablets APi
+  const Totablet = () => {
+    navigate("/tablets");
+  };
+  //go to smartPhone
+  const Tosmartphone = () => {
+    navigate("/smartphones");
+  };
+  //go to electronics API
+  const Toelectronics = () => {
+    navigate("/electronics");
+  };
   return (
     <div>
       {/**top nav bar  */}
@@ -82,7 +114,9 @@ function TopHeader() {
         variant="dark"
         style={{ height: "70px", zIndex: "10", backgroundColor: "black" }}
       >
-        <Navbar.Brand href="#home">Premium Tech </Navbar.Brand>
+        <Navbar.Brand href="#home" onClick={() => Tohome()}>
+          Premium Tech{" "}
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav">
           Menu &nbsp;<i className="fa-regular fa-square-caret-down"></i>
         </Navbar.Toggle>
@@ -91,13 +125,27 @@ function TopHeader() {
           style={{ backgroundColor: "black", width: "100%" }}
         >
           <Nav className="me-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/allproduct">All Product</Nav.Link>
-            <Nav.Link href="/laptop">Laptops</Nav.Link>
-            <Nav.Link href="/watches">Watches</Nav.Link>
-            <Nav.Link href="/tablets">Tablets</Nav.Link>
-            <Nav.Link href="smartphones">Smart Phones</Nav.Link>
-            <Nav.Link href="/electronics">others</Nav.Link>
+            <Nav.Link href="/home" onClick={() => Tohome()}>
+              Home
+            </Nav.Link>
+            <Nav.Link href="/allproduct" onClick={() => Toallproduct()}>
+              All Product
+            </Nav.Link>
+            <Nav.Link href="/laptop" onClick={() => Tolaptop()}>
+              Laptops
+            </Nav.Link>
+            <Nav.Link href="/watches" onClick={() => Towatch()}>
+              Watches
+            </Nav.Link>
+            <Nav.Link href="/tablets" onClick={() => Totablet()}>
+              Tablets
+            </Nav.Link>
+            <Nav.Link href="smartphones" onClick={() => Tosmartphone()}>
+              Smart Phones
+            </Nav.Link>
+            <Nav.Link href="/electronics" onClick={() => Toelectronics()}>
+              others
+            </Nav.Link>
           </Nav>
           <Nav.Item>
             <div className="input-group" style={{ marginTop: "5px" }}>
