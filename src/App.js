@@ -88,7 +88,11 @@ function App() {
     }, []);
     return (
       <Routes>
-        <Route exact path="/" element={<Login />}></Route>
+        {localStorage.getItem("user") ? (
+          <Route exact path="/" element={<Home />}></Route>
+        ) : (
+          <Route exact path="/" element={<Login />}></Route>
+        )}
         <Route exact path="/login" element={<Login />}></Route>
         <Route exact path="/home" element={<Home />}></Route>
         <Route exact path="/signupasbuyer" element={<SignUpasbuyer />}></Route>
