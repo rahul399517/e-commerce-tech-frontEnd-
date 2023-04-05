@@ -52,6 +52,7 @@
   }
   #formobile {
     display: flex;
+     margin-left: -20px;
   }
 
   #featuredslidecard {
