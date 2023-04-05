@@ -1,0 +1,14 @@
+#categoryintroforbigscreen {
+  display: flex;
+}
+#categoryintroforsmallscreen {
+  display: none;
+}
+@media only screen and (max-width: 1000px) {
+  #categoryintroforbigscreen {
+    display: none;
+  }
+  #categoryintroforsmallscreen {
+    display: flex;
+  }
+}
