@@ -16,33 +16,13 @@
 #cardimg {
   height: 150px;
 }
+.desktopview {
+  display: flex;
+}
 @media only screen and (max-width: 700px) {
-  #mobileviewelectronic {
+  .desktopview {
     display: none;
   }
-
-  #mobileviewLaptop {
-    display: none;
-  }
-  #mobileviewwatches {
-    display: none;
-  }
-  #mobileviewprofile {
-    display: none;
-  }
-  #mobileviewtablet {
-    display: none;
-  }
-  #mobileviewsmartphone {
-    display: none;
-  }
-  #mobileviewearphones {
-    display: none;
-  }
-  #mobileviewelectronics {
-    display: none;
-  }
-
   #profilepic {
     margin-left: 50px;
   }
@@ -54,3 +34,4 @@
     width: 100%;
   }
 }
+
