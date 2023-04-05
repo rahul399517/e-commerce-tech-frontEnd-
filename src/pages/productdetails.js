@@ -24,6 +24,8 @@ import { Form, ListGroupItem, Row, Col } from "react-bootstrap";
 import Swal from "sweetalert2";
 import CategoryCardMobile from "../components/categorycardsmobile";
 import CategoryIntro from "../components/categoryintro";
+import "./productdetails.css";
+import CategoryIntromobile from "../components/categoryintromobile";
 function ProductDetails() {
   //destructe the params
   // The useParams hook is used to extract the id parameter from the URL.
@@ -90,7 +92,7 @@ function ProductDetails() {
   //creating review section
 
   //The submitreview function is called when the user submits a review for the product.
-  
+
   // The handleDeleteReview function is called when the user deletes a review for the product.
 
   //  The likeproduct and Dislikeproduct functions are called when the user likes or dislikes the product.
@@ -573,7 +575,12 @@ function ProductDetails() {
         }}
       >
         <CategoryCardMobile />
-        <CategoryIntro />
+        <div id="categoryintroforbigscreen">
+          <CategoryIntro />
+        </div>
+        <div id="categoryintroforsmallscreen">
+          <CategoryIntromobile />
+        </div>
       </a>
     </>
   );
