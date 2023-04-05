@@ -30,6 +30,7 @@ o	Make sure the text is easy to read and understand.
 import AboutUs from "../components/aboutus";
 import CategoryCardMobile from "../components/categorycardsmobile";
 import CategoryIntro from "../components/categoryintro";
+import CategoryIntromobile from "../components/categoryintromobile";
 import FeaturedProduct from "../components/featuredslide";
 
 import MainSlider from "../components/mainslider";
@@ -44,7 +45,12 @@ function Home() {
       <MainSlider />
 
       <CategoryCardMobile />
-      <CategoryIntro />
+      <div id="categoryintroforbigscreen">
+        <CategoryIntro />
+      </div>
+      <div id="categoryintroforsmallscreen">
+        <CategoryIntromobile />
+      </div>
       <FeaturedProduct />
 
       <AboutUs />
@@ -52,3 +58,4 @@ function Home() {
   );
 }
 export default Home;
+
