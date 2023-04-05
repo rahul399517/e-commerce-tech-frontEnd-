@@ -22,22 +22,23 @@ import axios from "axios";
 import { API_BASE_URL } from "../config";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
 import CategoryCardLaptop from "../cards/categorycards";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Badge from "react-bootstrap/Badge";
 import { useSelector } from "react-redux";
-
+import { useNavigate } from "react-router-dom";
 /*
-  The component uses the useState hook to define state variables for each category of products, 
-  such as alllaptops, allwatches, alltablets, etc.
-  
-  These state variables are initialized with an empty array.
-  
-  */
+   The component uses the useState hook to define state variables for each category of products, 
+   such as alllaptops, allwatches, alltablets, etc.
+   
+   These state variables are initialized with an empty array.
+   
+   */
 
 function CategoryIntromobile() {
+  //decalring useNavigate
+  const navigate = useNavigate();
   //useselector // react hook used to select the data
   const user = useSelector((state) => state.user);
   //creating config_obj to configure the authorized user
@@ -63,41 +64,41 @@ function CategoryIntromobile() {
   };
 
   /*
-  
-  I have used several useEffect hooks  to fetch data from the server using the axios library.
-  
-   Each useEffect hook runs only once, when the component is mounted, and calls a corresponding 
-   function that sends a GET request to the API_BASE_URL with the appropriate endpoint (/laptop, 
-   /watch, /tablet, /smartphone, or /electronics). 
    
-   If the response status is 200, the data is saved in the corresponding state variable using the
-    setalllaptops, setallwatches, setalltablets, setallsmartphones,or setallelectronics functions. 
+   I have used several useEffect hooks  to fetch data from the server using the axios library.
+   
+    Each useEffect hook runs only once, when the component is mounted, and calls a corresponding 
+    function that sends a GET request to the API_BASE_URL with the appropriate endpoint (/laptop, 
+    /watch, /tablet, /smartphone, or /electronics). 
     
-    
-    If there is an error, a Swal.fire alert is displayed.
-  
-  
-  
-  
-  */
+    If the response status is 200, the data is saved in the corresponding state variable using the
+     setalllaptops, setallwatches, setalltablets, setallsmartphones,or setallelectronics functions. 
+     
+     
+     If there is an error, a Swal.fire alert is displayed.
+   
+   
+   
+   
+   */
 
   useEffect(() => {
     GetAllLaptops();
   }, []);
 
   /*
-    
-    The deleteProduct function sends a DELETE request to the API_BASE_URL with the endpoint 
-    /deletepost/:productId, where :productId is the ID of the product to be deleted. 
-    
-    The CONFIG_OBJ object is passed as the second argument to the axios.delete function to 
-    include authorization headers. 
-  
-  
-    If the response status is 200, the GetAllLaptops function is called to refetch the data.
-    
-    
-    */
+     
+     The deleteProduct function sends a DELETE request to the API_BASE_URL with the endpoint 
+     /deletepost/:productId, where :productId is the ID of the product to be deleted. 
+     
+     The CONFIG_OBJ object is passed as the second argument to the axios.delete function to 
+     include authorization headers. 
+   
+   
+     If the response status is 200, the GetAllLaptops function is called to refetch the data.
+     
+     
+     */
   //API call for delete post
   const deleteProduct = async (productId) => {
     console.log(productId);
@@ -188,6 +189,33 @@ function CategoryIntromobile() {
   useEffect(() => {
     GetAllElectronics();
   }, []);
+  //profilepage
+  const Profilepage = () => {
+    navigate("/profilebuyer");
+  };
+
+  //go to Laptop APi
+  const Tolaptop = () => {
+    navigate("/laptop");
+  };
+  //go to Watches API
+  const Towatch = () => {
+    navigate("/watches");
+  };
+
+  //go to smartPhone
+  const Tosmartphone = () => {
+    navigate("/smartphones");
+  };
+  //go to electronics API
+  const Toelectronics = () => {
+    navigate("/electronics");
+  };
+
+  //go to login as seller
+  const Tologinseller = () => {
+    navigate("/loginasseller");
+  };
   return (
     <div className="desktop view">
       <div className="row">
@@ -219,9 +247,7 @@ function CategoryIntromobile() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
-              <a href="/laptop">Know more</a>
-            </Card.Body>
+            <Card.Body onClick={() => Tolaptop()}>Know more</Card.Body>
           </Card>
         </div>
         {/**Intro for Laptops */}
@@ -291,12 +317,12 @@ function CategoryIntromobile() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body onClick={() => Towatch()}>
               <Card.Text>
                 Get upto 60% off on all Smart Watche products. Hurry,limited
                 offer
               </Card.Text>
-              <a href="/watches">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -327,19 +353,19 @@ function CategoryIntromobile() {
 
                   <Card.Body>
                     <Card.Title>{user.FullName}</Card.Title>
-                    <Card.Text>user since 2015</Card.Text>
-                    <Link to="/profilebuyer">
-                      {" "}
-                      <Button className="form-control btn btn-danger mb-1">
-                        View Profile
-                      </Button>
-                    </Link>
-                    <Link to="/loginasseller">
-                      {" "}
-                      <Button className="form-control btn btn-warning">
-                        Become a seller
-                      </Button>
-                    </Link>
+                    <Card.Text>user since 2015</Card.Text>{" "}
+                    <Button
+                      onClick={() => Profilepage()}
+                      className="form-control btn btn-danger mb-1"
+                    >
+                      View Profile
+                    </Button>{" "}
+                    <Button
+                      onClick={() => Tologinseller()}
+                      className="form-control btn btn-warning"
+                    >
+                      Become a seller
+                    </Button>
                   </Card.Body>
                 </Card>
               ) : (
@@ -446,11 +472,11 @@ function CategoryIntromobile() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body onClick={() => Tolaptop()}>
               <Card.Text>
                 Get upto 60% off on all Tablets .Hurry,limited offer
               </Card.Text>
-              <a href="/laptop">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -491,11 +517,11 @@ function CategoryIntromobile() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body onClick={() => Tosmartphone()}>
               <Card.Text>
                 Get upto 60% off on all Smart Phones .limited offer
               </Card.Text>
-              <a href="/smartphones">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -536,11 +562,11 @@ function CategoryIntromobile() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body onClick={() => Toelectronics()}>
               <Card.Text>
                 Get upto 60% off on all Electronics.Hurry,limited offer
               </Card.Text>
-              <a href="/electronics">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -572,12 +598,12 @@ function CategoryIntromobile() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body onClick={() => Tolaptop()}>
               <Card.Text>
                 Get Season clearence deals with upto 70% off . Hurry,limited
                 offer
               </Card.Text>
-              <a href="/laptop">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
