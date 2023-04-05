@@ -170,16 +170,7 @@ It then navigates the user to the home page of the application.
                 <div className="row">
                   <div className="col-sm-12 m-2">
                     <>
-                      <Button variant="black" disabled>
-                        <Spinner
-                          as="span"
-                          animation="border"
-                          size="sm"
-                          role="status"
-                          aria-hidden="true"
-                        />
-                        <span className="visually-hidden">Loading...</span>
-                      </Button>{" "}
+                      
                       <Button variant="black" disabled>
                         <img
                           style={{ width: "100px", height: "30px" }}
