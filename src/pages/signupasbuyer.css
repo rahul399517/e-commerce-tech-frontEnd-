@@ -1,0 +1,10 @@
+#loginphoto {
+  width: 100%;
+  height: 450px;
+}
+@media only screen and (max-width: 700px) {
+  #loginphoto {
+    width: 100%;
+    height: 200px;
+  }
+}

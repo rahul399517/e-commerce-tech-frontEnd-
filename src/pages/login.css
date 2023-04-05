@@ -1,0 +1,35 @@
+#loginphoto {
+  width: 100%;
+  height: 450px;
+}
+#loginphoto1 {
+  width: 100%;
+  height: 450px;
+}
+#formlogin {
+  border: 1px solid gray;
+  margin: 5px 5px 5px 5px;
+}
+@media only screen and (max-width: 700px) {
+  #loginphoto {
+    width: 100%;
+    height: 200px;
+  }
+  #loginphoto1 {
+    width: 100%;
+    height: 450px;
+  }
+  #formlogin {
+    border: 1px solid gray;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  #loginphoto1 {
+    width: 100%;
+    height: 730px;
+  }
+  #formlogin {
+    margin-top: 15%;
+    border: 1px solid gray;
+  }
+}

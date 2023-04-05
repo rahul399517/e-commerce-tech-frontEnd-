@@ -1,0 +1,34 @@
+#featuredproduct {
+  display: visible;
+}
+#slidecard:hover {
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
+    0 6px 20px 0 rgba(255, 253, 253, 0.19);
+}
+.blurbox {
+  width: 100%;
+  height: 200px;
+  margin-top: -200px;
+  background-color: black;
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  width: 100%;
+
+  opacity: 0;
+}
+
+.blurbox:hover {
+  opacity: 0.5;
+  transition: 0.7s;
+}
+
+@media only screen and (max-width: 700px) {
+  #featuredproduct {
+    display: none;
+  }
+  #slide1data {
+    display: none;
+  }
+}
