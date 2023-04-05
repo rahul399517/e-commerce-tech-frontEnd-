@@ -28,14 +28,14 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Badge from "react-bootstrap/Badge";
 import { useSelector } from "react-redux";
-
+import "./categoryintro.css";
 /*
-The component uses the useState hook to define state variables for each category of products, 
-such as alllaptops, allwatches, alltablets, etc.
-
-These state variables are initialized with an empty array.
-
-*/
+ The component uses the useState hook to define state variables for each category of products, 
+ such as alllaptops, allwatches, alltablets, etc.
+ 
+ These state variables are initialized with an empty array.
+ 
+ */
 
 function CategoryIntro() {
   //useselector // react hook used to select the data
@@ -63,41 +63,41 @@ function CategoryIntro() {
   };
 
   /*
-
-I have used several useEffect hooks  to fetch data from the server using the axios library.
-
- Each useEffect hook runs only once, when the component is mounted, and calls a corresponding 
- function that sends a GET request to the API_BASE_URL with the appropriate endpoint (/laptop, 
- /watch, /tablet, /smartphone, or /electronics). 
  
- If the response status is 200, the data is saved in the corresponding state variable using the
-  setalllaptops, setallwatches, setalltablets, setallsmartphones,or setallelectronics functions. 
+ I have used several useEffect hooks  to fetch data from the server using the axios library.
+ 
+  Each useEffect hook runs only once, when the component is mounted, and calls a corresponding 
+  function that sends a GET request to the API_BASE_URL with the appropriate endpoint (/laptop, 
+  /watch, /tablet, /smartphone, or /electronics). 
   
-  
-  If there is an error, a Swal.fire alert is displayed.
-
-
-
-
-*/
+  If the response status is 200, the data is saved in the corresponding state variable using the
+   setalllaptops, setallwatches, setalltablets, setallsmartphones,or setallelectronics functions. 
+   
+   
+   If there is an error, a Swal.fire alert is displayed.
+ 
+ 
+ 
+ 
+ */
 
   useEffect(() => {
     GetAllLaptops();
   }, []);
 
   /*
-  
-  The deleteProduct function sends a DELETE request to the API_BASE_URL with the endpoint 
-  /deletepost/:productId, where :productId is the ID of the product to be deleted. 
-  
-  The CONFIG_OBJ object is passed as the second argument to the axios.delete function to 
-  include authorization headers. 
-
-
-  If the response status is 200, the GetAllLaptops function is called to refetch the data.
-  
-  
-  */
+   
+   The deleteProduct function sends a DELETE request to the API_BASE_URL with the endpoint 
+   /deletepost/:productId, where :productId is the ID of the product to be deleted. 
+   
+   The CONFIG_OBJ object is passed as the second argument to the axios.delete function to 
+   include authorization headers. 
+ 
+ 
+   If the response status is 200, the GetAllLaptops function is called to refetch the data.
+   
+   
+   */
   //API call for delete post
   const deleteProduct = async (productId) => {
     console.log(productId);
@@ -189,7 +189,7 @@ I have used several useEffect hooks  to fetch data from the server using the axi
     GetAllElectronics();
   }, []);
   return (
-    <div>
+    <div className="desktopview">
       <div className="row">
         {/**Intro for Electronics */}
         <div className="col-lg-3 col-sm-6" id="mobileviewelectronic">
