@@ -39,6 +39,11 @@ function CategoryCardLaptop(props) {
           id="cardimg"
           style={{}}
         />
+  <Card.Text
+          style={{ fontSize: "10px", marginTop: "-7px", fontWeight: "700" }}
+        >
+          {props.productData.ProductName}
+        </Card.Text>
       </Card>
     </div>
   );
