@@ -102,6 +102,14 @@ function TopHeader() {
   const Toelectronics = () => {
     navigate("/electronics");
   };
+  //go to electronics API
+  const Tocart = () => {
+    navigate("/cart");
+  };
+  //go to electronics API
+  const Tologin = () => {
+    navigate("/login");
+  };
   return (
     <div>
       {/**top nav bar  */}
@@ -114,7 +122,7 @@ function TopHeader() {
         variant="dark"
         style={{ height: "70px", zIndex: "10", backgroundColor: "black" }}
       >
-        <Navbar.Brand href="#home" onClick={() => Tohome()}>
+        <Navbar.Brand  onClick={() => Tohome()}>
           Premium Tech{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav">
@@ -125,25 +133,25 @@ function TopHeader() {
           style={{ backgroundColor: "black", width: "100%" }}
         >
           <Nav className="me-auto">
-            <Nav.Link href="/home" onClick={() => Tohome()}>
+            <Nav.Link  onClick={() => Tohome()}>
               Home
             </Nav.Link>
-            <Nav.Link href="/allproduct" onClick={() => Toallproduct()}>
+            <Nav.Link  onClick={() => Toallproduct()}>
               All Product
             </Nav.Link>
-            <Nav.Link href="/laptop" onClick={() => Tolaptop()}>
+            <Nav.Link  onClick={() => Tolaptop()}>
               Laptops
             </Nav.Link>
-            <Nav.Link href="/watches" onClick={() => Towatch()}>
+            <Nav.Link  onClick={() => Towatch()}>
               Watches
             </Nav.Link>
-            <Nav.Link href="/tablets" onClick={() => Totablet()}>
+            <Nav.Link  onClick={() => Totablet()}>
               Tablets
             </Nav.Link>
-            <Nav.Link href="smartphones" onClick={() => Tosmartphone()}>
+            <Nav.Link  onClick={() => Tosmartphone()}>
               Smart Phones
             </Nav.Link>
-            <Nav.Link href="/electronics" onClick={() => Toelectronics()}>
+            <Nav.Link  onClick={() => Toelectronics()}>
               others
             </Nav.Link>
           </Nav>
@@ -183,7 +191,7 @@ function TopHeader() {
                   className="fa-solid fa-truck"
                 ></i>
               </Nav.Link> */}
-              <Nav.Link href="/cart">
+              <Nav.Link onClick={() => Tocart()}>
                 {" "}
                 {/*Shopping cart division */}
                 <i
@@ -225,7 +233,7 @@ function TopHeader() {
               </Nav.Link>
             </Nav>
           ) : (
-            <Nav.Link eventKey={2} href="/login">
+            <Nav.Link eventKey={2} onClick={() => Tologin()}>
               <p
                 style={{
                   marginLeft: "10px",
