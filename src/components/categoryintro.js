@@ -22,12 +22,12 @@ import axios from "axios";
 import { API_BASE_URL } from "../config";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
 import CategoryCardLaptop from "../cards/categorycards";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Badge from "react-bootstrap/Badge";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 //import "./categoryintro.css";
 /*
  The component uses the useState hook to define state variables for each category of products, 
@@ -38,6 +38,8 @@ import { useSelector } from "react-redux";
  */
 
 function CategoryIntro() {
+  //decalring useNavigate
+  const navigate = useNavigate();
   //useselector // react hook used to select the data
   const user = useSelector((state) => state.user);
   //creating config_obj to configure the authorized user
@@ -188,6 +190,37 @@ function CategoryIntro() {
   useEffect(() => {
     GetAllElectronics();
   }, []);
+  //profilepage
+  const Profilepage = () => {
+    navigate("/profilebuyer");
+  };
+
+  //go to all product API
+  const Toallproduct = () => {
+    navigate("/allproduct");
+  };
+  //go to Laptop APi
+  const Tolaptop = () => {
+    navigate("/laptop");
+  };
+  //go to Watches API
+  const Towatch = () => {
+    navigate("/watches");
+  };
+
+  //go to smartPhone
+  const Tosmartphone = () => {
+    navigate("/smartphones");
+  };
+  //go to electronics API
+  const Toelectronics = () => {
+    navigate("/electronics");
+  };
+
+  //go to login as seller
+  const Tologinseller = () => {
+    navigate("/loginasseller");
+  };
   return (
     <div className="desktopview">
       <div className="row">
@@ -219,12 +252,12 @@ function CategoryIntro() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body onClick={() => Tolaptop()}>
               <Card.Text>
                 Get Season clearence deals with upto 70% off . Hurry,limited
                 offer
               </Card.Text>
-              <a href="/laptop">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -265,11 +298,15 @@ function CategoryIntro() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body
+              onClick={() => {
+                Tolaptop();
+              }}
+            >
               <Card.Text>
                 Get upto 60% off on all Laptop products.Hurry,limited offer
               </Card.Text>
-              <a href="/laptop">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -310,12 +347,16 @@ function CategoryIntro() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body
+              onClick={() => {
+                Towatch();
+              }}
+            >
               <Card.Text>
                 Get upto 60% off on all Smart Watche products. Hurry,limited
                 offer
               </Card.Text>
-              <a href="/watches">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -350,19 +391,19 @@ function CategoryIntro() {
 
                     <Card.Body>
                       <Card.Title>{user.FullName}</Card.Title>
-                      <Card.Text>user since 2015</Card.Text>
-                      <Link to="/profilebuyer">
-                        {" "}
-                        <Button className="form-control btn btn-danger mb-1">
-                          View Profile
-                        </Button>
-                      </Link>
-                      <Link to="/loginasseller">
-                        {" "}
-                        <Button className="form-control btn btn-warning">
-                          Become a seller
-                        </Button>
-                      </Link>
+                      <Card.Text>user since 2015</Card.Text>{" "}
+                      <Button
+                        onClick={() => Profilepage()}
+                        className="form-control btn btn-danger mb-1"
+                      >
+                        View Profile
+                      </Button>{" "}
+                      <Button
+                        onClick={() => Tologinseller()}
+                        className="form-control btn btn-warning"
+                      >
+                        Become a seller
+                      </Button>
                     </Card.Body>
                   </Card>
                 ) : (
@@ -440,12 +481,16 @@ function CategoryIntro() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body
+              onClick={() => {
+                Toallproduct();
+              }}
+            >
               <Card.Text>
                 Get Season clearence deals with upto 70% off . Hurry,limited
                 offer
               </Card.Text>
-              <a href="/allproduct">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -488,11 +533,15 @@ function CategoryIntro() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body
+              onClick={() => {
+                Tolaptop();
+              }}
+            >
               <Card.Text>
                 Get upto 60% off on all Tablets .Hurry,limited offer
               </Card.Text>
-              <a href="/laptop">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -533,11 +582,15 @@ function CategoryIntro() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body
+              onClick={() => {
+                Tosmartphone();
+              }}
+            >
               <Card.Text>
                 Get upto 60% off on all Smart Phones .Hurry,limited offer
               </Card.Text>
-              <a href="/smartphones">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -578,11 +631,15 @@ function CategoryIntro() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body
+              onClick={() => {
+                Toelectronics();
+              }}
+            >
               <Card.Text>
                 Get upto 60% off on all Electronics.Hurry,limited offer
               </Card.Text>
-              <a href="/electronics">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
@@ -614,12 +671,16 @@ function CategoryIntro() {
               border: "1px solid gray",
             }}
           >
-            <Card.Body>
+            <Card.Body
+              onClick={() => {
+                Tolaptop();
+              }}
+            >
               <Card.Text>
                 Get Season clearence deals with upto 70% off . Hurry,limited
                 offer
               </Card.Text>
-              <a href="/laptop">Know more</a>
+              Know more
             </Card.Body>
           </Card>
         </div>
