@@ -171,7 +171,7 @@ It then navigates the user to the home page of the application.
                   <div className="col-sm-12 m-2">
                     <>
                       
-                      <Button variant="black" disabled>
+                      <Button variant="black" style={{boxShadow:"none"}} disabled>
                         <img
                           style={{ width: "100px", height: "30px" }}
                           src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif"
