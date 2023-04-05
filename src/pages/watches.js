@@ -62,7 +62,7 @@ function Watches() {
           style={{
             width: "100%",
             backgroundColor: "white",
-            marginBottom: "300px",
+
           }}
         >
           <Card.Body>
@@ -151,7 +151,7 @@ function Watches() {
         </Card>
       </div>
       <div className="col-md-10 col-sm-12">
-        <Card>
+        <Card style={{ marginBottom: "300px" }}>
           <Card.Body>
             {/**All product looping card */}
             <div className="row">
