@@ -28,7 +28,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Badge from "react-bootstrap/Badge";
 import { useSelector } from "react-redux";
-import "./categoryintro.css";
+//import "./categoryintro.css";
 /*
  The component uses the useState hook to define state variables for each category of products, 
  such as alllaptops, allwatches, alltablets, etc.
