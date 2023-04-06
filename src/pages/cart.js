@@ -55,7 +55,7 @@ function Cart() {
   };
   const removeHandler = (id) => {
     dispatch(removeFromCart(id));
-    refreshPage();
+    //refreshPage();
   };
   const getCartCount = () => {
     return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
