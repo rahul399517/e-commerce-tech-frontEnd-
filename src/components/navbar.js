@@ -272,7 +272,7 @@ function TopHeader() {
             />
             <p style={{ color: "Black", display: "inline", fontstyle: "none" }}>
               {" "}
-              {user.FullName}
+              {user.FullName} 's profile
             </p>
           </button>
           <a href="#Nav" onClick={handleClose}>
