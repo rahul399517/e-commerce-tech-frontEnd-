@@ -133,7 +133,7 @@ function Cart() {
       //(a) : this code will refersh the page
       //window.location.reload();
        // window.renderReload();  //in render.com , we use this code insted of window.location.reload();//<- not working 
-       window.location.href = window.location.origin;
+       window.location.href = window.location.href;   //window.location.origin <- this will navigte to home page 
       // (b) : this below code will set the default value if refresh to true , and will stop the page to refresh again
       setRefresh(true);
       //(c) : this below code will scroll the page to top ,after pafe gets refreshed by executing useEffrct code , which declared below
